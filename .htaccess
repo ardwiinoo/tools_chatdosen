@@ -1,0 +1,6 @@
+RewriteEngine on
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-SSL} !on
+RewriteCond %{HTTP_HOST} ^chatdosen\.ga$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.chatdosen\.ga$
+RewriteRule ^(.*)$ "https\:\/\/chatdosen\.ga\/$1" [R=301,L]
